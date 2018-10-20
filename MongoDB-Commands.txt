@@ -1,0 +1,192 @@
+-----------------------------------------------------------------------
+;
+db.products.insert(
+{
+prod_id:"lap01", name:"Macbook Air", rating:0,price:80000,discount:10,category:"laptop",feedback:
+	[
+	],
+	img_url:"./assets/images/lap1.jpg"
+}
+);
+
+
+
+
+db.products.insert(
+{
+prod_id:"lap02", name:"Dell XPS", rating:0,price:60000,discount:10,category:"laptop",feedback:
+	[
+	],
+	img_url:"./assets/images/lap2.jpg"
+}
+);
+
+
+db.products.insert(
+{
+prod_id:"lap03", name:"Samsung",rating:0,price:55000,discount:10,category:"laptop",feedback:
+	[
+	],
+	img_url:"./assets/images/lap3.jpg"
+}
+);
+
+
+db.products.insert(
+{
+prod_id:"lap04", name:"HP EliteBook",rating:0,price:58000,discount:10,category:"laptop",feedback:
+	[
+	],
+	img_url:"./assets/images/lap4.jpg"
+}
+);
+
+
+
+
+
+
+
+**************************************************************************************************
+// For Phones ;
+
+
+
+
+db.products.insert(
+{
+prod_id:"phone01", name:"Apple 6",rating:0,price:45000,discount:10,category:"phone",feedback:
+	[
+	],
+	img_url:"./assets/images/phone1.jpg"
+}
+);
+
+
+
+
+
+db.products.insert(
+{
+prod_id:"phone02", name:"Samsung ",rating:0,price:35000,discount:8,category:"phone",feedback:
+	[
+	],
+	img_url:"./assets/images/phone2.jpg"
+}
+);
+
+
+
+
+db.products.insert(
+{
+prod_id:"phone03", name:"Oppo",rating:0,price:25000,discount:15,category:"phone",feedback:
+	[
+	],
+	img_url:"./assets/images/phone3.jpg"
+}
+);
+
+
+
+
+
+db.products.insert(
+{
+prod_id:"phone04", name:"Samsung Edge",rating:0,price:42000,discount:10,category:"phone",feedback:
+	[
+	],
+	img_url:"./assets/images/phone04.jpg"
+}
+);
+
+*************************************************************************************************
+// For Laptops
+;
+
+db.products.insert(
+{
+prod_id:"deal01", name:"Jio Lyf",rating:0,price:32000,discount:35,category:"deal",feedback:
+	[
+	],
+	img_url:"./assets/images/deal1.jpg"
+}
+);
+
+
+
+db.products.insert(
+{
+prod_id:"deal02", name:"Samsung Ultra",rating:0,price:43000,discount:42,category:"deal",feedback:
+	[
+	],
+	img_url:"./assets/images/deal2.jpg"
+}
+);
+
+
+
+
+db.products.insert(
+{
+prod_id:"deal03", name:"HP Smart",rating:0,price:72000,discount:37,category:"deal",feedback:
+	[
+	],
+	img_url:"./assets/images/deal3.jpg"
+}
+);
+
+
+
+db.products.insert(
+{
+prod_id:"deal04", name:"Mac Smart",rating:0,price:1020000,discount:52,category:"deal",feedback:
+	[
+	],
+	img_url:"./assets/images/deal4.jpg"
+}
+);
+
+
+
+*************************************************************************************************
+// For Clothes 
+;
+db.products.insert(
+{
+prod_id:"cloth01", name:"Purple Top",rating:0,price:1500,discount:15,category:"clothes",feedback:
+	[
+	],
+	img_url:"./assets/images/clothes1.jpg"
+}
+);
+
+db.products.insert(
+{
+prod_id:"cloth02", name:"Blue Dress",rating:0,price:2500,discount:15,category:"clothes",feedback:
+	[
+	],
+	img_url:"./assets/images/clothes2.jpg"
+}
+);
+
+
+db.products.insert(
+{
+prod_id:"cloth03", name:"Red Suit",rating:0,price:1800,discount:15,category:"clothes",feedback:
+	[
+	],
+	img_url:"./assets/images/clothes3.jpg"
+}
+);
+
+db.products.insert(
+{
+prod_id:"cloth04", name:"White Top",rating:0,price:1200,discount:15,category:"clothes",feedback:
+	[
+	],
+	img_url:"./assets/images/clothes4.jpg"
+}
+);
+
+
