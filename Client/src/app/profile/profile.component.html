@@ -1,0 +1,27 @@
+<div class="container">
+  
+   <nav class="nav navbar">
+  
+   <ul class="nav nav-tabs nav-justified">
+   <li ><h3 class="alert btn btn-default"id="1" [class.active]=true (click)="select('1')" >User Details</h3></li>
+   <li ><h3 class="alert btn btn-default" id="2" (click)="select('2')"> Address Details </h3></li>
+   <li ><h3 class="alert btn btn-default" id="3" (click)="select('3')">Card Details</h3></li>
+   
+   </ul>
+   </nav>
+   <hr>
+  
+   <div id="c1" [class.hidden]='user'>
+   <app-user-details></app-user-details>
+   </div>
+  
+  
+   <div id="c2" [class.hidden]='address'>
+   <app-address-details></app-address-details>
+   </div>
+  
+   <div id="c3" [class.hidden]='card'>
+   <app-card-details></app-card-details>
+   </div>
+   
+  </div>

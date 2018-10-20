@@ -1,0 +1,43 @@
+<h1 class="container-fluid row alert " id="heading" style="margin:20px">Your Saved Address <span><img src="../../assets/images/map.png" class=" imgCls " ></span></h1>
+<hr>
+ 
+ 
+ <div *ngFor="let address of addressList; let i = index" >
+ 
+ <div class="row">
+
+ <div>
+ 
+ 
+
+ <div class="col-xs-5"> 
+ <h4 class="alert-inf strong"> {{address.name}} </h4>
+ <h4 class="alert-inf" > {{address.locality}} {{address.street}}</h4>
+ <h4 class="alert-inf" > {{address.city}} {{address.state}}</h4>
+ 
+ <h4 class="alert-inf" > Near {{address.landmark}} Pin-Code {{address.pin}}</h4>
+ <h4 class="alert-inf" > Contact Number : {{address.alterPhone}} </h4>
+ <hr>
+ <hr>
+ </div>
+ <div col-xs-1>
+ <br><br>
+ <div><button id="bt1" (click)="send(address.address_id)" name="selection" class="btn btnCls btn-primary">Modify This Address</button>
+ <br>
+ <button id="bt2" (click)="removeAddress(address.address_id)" name="selection" class="btn btnCls btn-primary btn-danger">Remove This Address</button></div>
+ <!-- -->
+
+ <div *ngIf="orderingNow == 1">
+ <label class="container">Use Address
+ <input type="radio" (click)="forwardToOrders(address.address_id)" name="cardSelect">
+ <span class="checkmark"></span> 
+ </label>
+ </div>
+
+ <!-- -->
+ <br><br>
+ </div>
+ </div>
+ </div> 
+ 
+ </div>

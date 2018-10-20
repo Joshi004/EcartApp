@@ -1,0 +1,62 @@
+<div *ngIf="productDetail">
+    
+     <div class="row">
+     <div class="col-xs-6">
+     <div class="inDiv">
+     <img [src]='productDetail[0].img_url' class="prdImg">
+     <h1 class="text-center alert-inf prdTag" >{{productDetail[0].name}}</h1>
+     </div>
+     </div>
+     <div class="col-xs-6">
+     <div class="rightTextDiv">
+     <h2 class="alert alert-info">Product Description</h2>
+     <h4>Customer Reviews</h4>
+     <ul *ngFor="let review of productDetail[0].feedback; let i = index" >
+     <li>{{review.user_name}} : {{review.comment}}</li>
+     </ul> 
+     
+     
+     <div *ngIf="isInOrders">
+     <h4 id="info2">Please Provide feedback to help us serve you better</h4>
+     
+     <button class="btn btn-primary" (click)="showRate()">Rate Product</button>
+     <button class="btn btn-primary" (click)="showReview()">Give Feedback</button> 
+     <div *ngIf='reviewVisible'>
+     <textarea rows='3' cols='50' #comment placeHolder="Please Provide a review To Help Buy Other Customers and Make us Serve You better "></textarea>
+     <button class="btn btn-primary" (click)=addReview(comment.value)>Post Review</button>
+     </div>
+     </div>
+     
+     <hr>
+     <h4> M.R.P: {{productDetail[0].price}}</h4>
+    
+     <h4 *ngIf="productDetail[0].category != 'deal'"> You Save: {{productDetail[0].discount}}%</h4>
+     <h4 *ngIf="productDetail[0].category == 'deal'"> On Todays Deal Special Discount : {{productDetail[0].discount}}%</h4>
+     <h4>Offer Price: {{productDetail[0].price*(100-productDetail[0].discount)/100}}</h4>
+     <!-- <h4> M.R.P: {{productDetail[0].dealName}}</h4> -->
+     <h3 class="alert <alert-info></alert-info>">In Stock</h3>
+     
+     <form class="form form-horizontal">
+     <label for="quant" class="control-label col-xs-3">Quantity</label> 
+     <div class="col-xs-3">
+     <input type=number name="quant" min='1' max='10' #quant value='1' placeholder="1" class="form-control customFormFiled"> 
+     <button type="submit" (click)="addToCart(quant.value)" class="btn btn-primary center-block customFormFiled btn-responsive" >Add To Cart</button>
+     <h4 class="text-info " class="text-center alert alert-warning">In Cart : {{presentQuant}}</h4><br>
+     <button type="submit" (click)="addToWishlist()" class="btn btn-primary center-block customFormFiled" >Add To Wishlist</button>
+     </div> 
+     </form>
+     <br><h5 id="info" class="text-info alert alert-warning">Select Quantity to move to Cart</h5>
+     <!-- <h4 class="text-info ">Quantity Present In Cart : {{presentQuant}}</h4> -->
+     
+     </div>
+     </div>
+     </div>
+    </div>
+    <!-- {{productDetail[0s].price}} -->
+    
+    
+    <!-- {{productDetail[0].name]}} -->
+    
+    <!-- {{productDetail.name}} -->
+    
+    

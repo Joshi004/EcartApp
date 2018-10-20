@@ -1,0 +1,13 @@
+
+<div *ngIf='!hideEdit'>
+  <app-edit-card [parentData]="selectedCard"></app-edit-card>
+  </div>
+  
+  <div *ngIf='!hideList'>
+  <app-list-card (sender)='selectedCard=$event'></app-list-card>
+  </div>
+  
+  
+  
+  <button class="btn btn-primary btnCls" [class.hidden]='hideBackButton' (click)=back() >Go Back</button>
+  <button class="btn btn-primary btnCls" [class.hidden]='hideAddButton' (click)=addIt()>Add New Card</button>

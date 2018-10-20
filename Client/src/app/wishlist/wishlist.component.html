@@ -1,0 +1,20 @@
+
+<h1 class="container-fluid row text-center alert alert-info" style="margin:20px">All You Wished Is Here....</h1><hr>
+
+ 
+ <div class="row">
+ <div *ngFor="let product of list; let i = index" >
+ <div>
+ <div class="col-xs-3">
+ 
+ <a [routerLink]="[product.prod_id]"><img [src]='product.img_url' class="prdImg">
+ 
+ <h4 class="text-center alert-inf " >{{product.name}}</h4>
+ <h4 class="text-center alert-inf prdTag" >Save Rs {{product.discount*(product.price/100)}} On this</h4></a>
+ <button class="btn btn-primary prdBtn" (click)="removeFromWishlist(product.prod_id)">Not Wished Anymore</button> 
+ </div>
+
+ </div>
+ 
+ </div>
+ </div>

@@ -1,0 +1,13 @@
+
+<div *ngIf='!hideEdit'>
+  <app-edit-address [parentData]="selectedAddress"></app-edit-address>
+  </div>
+  
+  <div *ngIf='!hideList'>
+  <app-list-address (sender)='selectedAddress=$event'></app-list-address>
+  </div>
+  
+  
+  
+  <button class="btn btn-primary btnCls" [class.hidden]='hideBackButton' (click)=back() >Go Back</button>
+  <button class="btn btn-primary btnCls" [class.hidden]='hideAddButton' (click)=addIt()>Add New Address</button>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h1>Shoping Cart</h1>
+  <table class="table  table-hover table-responsive">
+    <thead>
+      <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>SubTotal</th>
+          <th></th>
+      </tr>
+    </thead>
+    <tbody id="parentRow" *ngIf="show">
+      <tr *ngFor="let item of cartItems; let i = index" class="master" >
+          <td class="main"><img [src]='item.img_url' class="img_mini"></td>
+          <td class="main">{{item.name}}</td>
+          <td class="main">{{item.category|titlecase}}</td>
+          <td class="main"><button class="btn btn-default" (click)="updateQuantity(1,item.prod_id,item.user_id,i)"><span class="glyphicon glyphicon-plus"></span></button> <span [id]='item.prod_id'> {{item.quantity}} </span> <button class="btn btn-default" (click)="updateQuantity(-1,item.prod_id,item.user_id,i)"><span class="glyphicon glyphicon-minus"></span></button></td>
+          <td  class="price main">{{item.price*(100-item.discount)/100}}</td>
+          <td  class="subTotal main">{{item.price*(100-item.discount)/100*item.quantity}}</td>
+          <td><button class="btn btn-primary" (click)="removeItem(item.user_id,item.prod_id,i)">Remove Item</button></td>
+      </tr>
+  
+    </tbody>
+  </table>
+      
+      
+    <h5 class="text-right"> Delivery Charge = 500 (0 If Total Cart Value Excedds Rs 1000 )<h5>
+    <h3 class="text-right" #total> Effective Total Amount = {{totalAmount}}<h3>
+     <div id="ord" *ngIf="canBuy && hasProducts"> <button class="btn btn-primary"  (click)="order()" >CheckOut</button></div>
+  

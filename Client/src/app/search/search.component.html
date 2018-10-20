@@ -1,0 +1,21 @@
+
+
+ <h2 class="text-center">Search Results For {{toSearch}}</h2>
+ 
+ <div class="row">
+ <div *ngFor="let product of products; let i = index" >
+ <div>
+ <div class="col-xs-3">
+ <a (click)="redirect(product.prod_id)"><img [src]='product.img_url' class="prdImg">
+ 
+ <h4 class="text-center alert-inf prdTag" >{{product.name}}</h4></a>
+ 
+ </div>
+
+ </div>
+ 
+ </div>
+ </div>
+<hr>
+<h4 id ="err">oory No Results Found For This Search </h4>
+ 

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+  <div class="panel panel-primary">
+  <div class="panel-heading">User Login</div>
+  <div class="panel-body">
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+  <div class="form-group">
+  <img src="../../assets/images/user.png" class="center-block" width=60% height=50%>
+  
+  <input type="text" class="form-control " style="visibility:hidden" formControlName="current_user" id="current">
+  <input type="text" class="form-control customFormFiled" [(ngModel)]="default_mail" placeholder="Registered Email" formControlName="user_id" id="usrName">
+  
+  <span class="error-message alert-danger" *ngIf="!loginForm.controls.user_id.valid && loginForm.controls.user_id.dirty">Field required</span>
+  </div>
+  <div class="form-group">
+  
+  <input type="password" class="form-control customFormFiled" placeholder="Password" formControlName="password" id="pwd">
+  <span class="error-message alert-danger" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">Field required</span>
+  </div>
+  <div class="form-group">
+  <button class="btn btn-primary center-block customFormFiled" type="submit" [disabled]="!loginForm.valid">Login</button>
+  </div>
+  </form>
+  <a [routerLink]="['/signup']"><button id="dhaa" class="btn btn-primary center-block customFormFiled">Don't Have An Account</button></a>
+  <div class="text-info text-center" ><h4 id="info">Please Sign In or create an account to continue</h4></div>
+  <div *ngIf="errorMessage!=null">
+  <span class="text-danger">{{errorMessage}}</span>
+  </div>
+  <!-- <div *ngIf="successMessage!=null">
+  <span class="text-success">{{successMessage}}</span>
+  </div> -->
+  </div>
+ </div>
+ </div>
+ </div>
+ 

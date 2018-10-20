@@ -1,0 +1,79 @@
+<h2>Todays Deals</h2>
+<div class="row">
+<div *ngFor="let product of deals; let i = index" >
+<div>
+<div class="col-xs-3">
+<a [routerLink]="[product.prod_id]">
+<span class="badge badge-secondary">Deal</span>
+<img [src]='product.img_url' class="prdImg">
+
+<h4 class="text-center alert-inf prdTag" >{{product.name}}</h4> </a>
+</div>
+
+</div>
+
+</div>
+</div>
+<hr>
+
+
+
+
+<h2>Laptops And Assecories</h2>
+
+<div class="row">
+<div *ngFor="let product of laptops; let i = index" >
+<div>
+<div class="col-xs-3">
+<a [routerLink]="[product.prod_id]"><img [src]='product.img_url' class="prdImg">
+
+<h4 class="text-center alert-inf prdTag" >{{product.name}}</h4></a>
+</div>
+
+</div>
+
+</div>
+</div>
+<hr>
+
+
+
+
+<h2>Phones And Tabs</h2>
+
+<div class="row">
+<div *ngFor="let product of phones; let i = index" >
+<div>
+<div class="col-xs-3">
+<a [routerLink]="[product.prod_id]"><img [src]='product.img_url' class="prdImg">
+
+<h4 class="text-center alert-inf prdTag" >{{product.name}}</h4></a>
+</div>
+
+</div>
+
+</div>
+</div>
+<hr>
+
+
+
+
+
+
+<h2>Apperels</h2>
+
+<div class="row">
+<div *ngFor="let product of clothes; let i = index" >
+<div>
+<div class="col-xs-3">
+<div class="inDiv">
+<a [routerLink]="[product.prod_id]"><img [src]='product.img_url' class="prdImg">
+<h4 class="text-center alert-inf prdTag" >{{product.name}}</h4></a>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>

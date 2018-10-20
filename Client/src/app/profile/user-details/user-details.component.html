@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="form-horizontal ">
+  <h1 class=" alert">User Details <span> <img src="../../assets/images/user.png" class=" imgCls " ></span></h1>
+  <hr> 
+  
+  <div class="form-group">
+                         <label for="name_n" class="control-label col-xs-3">Username</label> 
+                                 <div class="col-xs-9">
+                                      <input id="name" type=text formControlName="user_name" class="form-control customFormFiled">
+                                         <p *ngIf="registerForm.controls.user_name.errors?.required && (registerForm.controls.user_name.dirty)" class="errorField alert-danger">This field is required!</p>
+                                         <p *ngIf="registerForm.controls.user_name.errors?.pattern && (registerForm.controls.user_name.dirty)" class="errorField alert-danger">Name May Contain Only Alphabets and space</p>
+                                 </div> 
+                                 
+      </div>
+  
+  
+  <div class="form-group">
+                 <label for="password" class="control-label col-xs-3">Password</label>
+                         <div class="col-xs-9">
+                                 <input type="text" id="pass" formControlName="password" class="form-control customFormFiled">
+                                 <p *ngIf="registerForm.controls.password.errors?.required && (registerForm.controls.password.dirty) " class="errorField alert-danger">This field is required!</p>
+                                 <p *ngIf="registerForm.controls.password.errors?.pattern && (registerForm.controls.password.dirty) " class="errorField alert-danger">Must Contain 6-16 Charactors , Atleast One Lower Case Charactor, Upper Case Charactor , Number and special charactor</p>
+                         </div>
+  </div>
+ 
+ 
+  
+  <div class="form-group">
+                         <label for="email_n" class="control-label col-xs-3">Email Address</label>
+                                 <div class="col-xs-9">
+                                         <input type=email id="mail" disabled formControlName="user_id" class="form-control customFormFiled email.invalid">
+                                         <p *ngIf="registerForm.controls.user_id.errors?.required && (registerForm.controls.user_id.dirty)" class="errorField alert-danger">Valid Email is required!</p>
+                                         <p *ngIf="registerForm.controls.user_id.errors?.pattern && (registerForm.controls.user_id.dirty)" class="errorField alert-danger">Email Address Entered is Not Valid </p>
+                                 </div>
+                            
+  </div>
+  
+ 
+  <div class="form-group">
+                         <label for="phone_no" class="control-label col-xs-3">Mobile Number</label>
+                                 <div class="col-xs-9">
+                                         <input type=text id="mob" formControlName="phone_no" class="form-control customFormFiled">
+                                         <p *ngIf="registerForm.controls.phone_no.errors " class="errorField alert-danger">10 Digits Valid Number Required</p>
+                                 </div>
+                                     
+                     </div>
+  
+  
+  <div class="col-xs-9">
+                                         <h3 id ="info" class="alert text-warning center-block customFormField text-center btnCls" ></h3>
+  
+  </div>
+  
+  
+  <div *ngIf="registerForm.controls.user_name.errors || registerForm.controls.password.errors || registerForm.controls.phone_no.errors || registerForm.controls.user_id.errors; else elseBlock">
+                             <div class="col-xs-12">
+                                         <button class="btn btn-primary center-block customFormFiled btnCls" disabled >Register</button>
+  
+  </div>
+                         </div>
+                 <!-- Now else Part Working Part -->
+                         <ng-template #elseBlock>
+                             <div class="col-xs-12">
+  <button type="submit" (click)="submitted=true" class="btn btn-primary btnCls center-block customFormFiled">Register</button>
+  
+                             </div>
+                         </ng-template>
+                     
+  </form>
+  <a [routerLink]="['/home']"><button (click)="cancel()" class="btn btn-danger btnCls center-block fcustomFormFiled">Cancel</button></a>
+ <br/>
+ </div>

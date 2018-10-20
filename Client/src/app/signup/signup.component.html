@@ -1,0 +1,87 @@
+
+<div class="container-fluid">
+  <div class="row>">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+  <div class="backDiv">
+  <div class="row"></div>
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="form-horizontal">
+                      
+  <img src="../../assets/images/user.png" class="center-block" width=53% height=50%> 
+  <div class="form-group">
+                         <label for="name_n" class="control-label col-xs-3">Username</label> 
+                                 <div class="col-xs-9">
+                                      <input type=text formControlName="user_name" placeholder="Naresh Joshi" class="form-control customFormFiled">
+                                         <p *ngIf="registerForm.controls.user_name.errors?.required && (registerForm.controls.user_name.pristine || registerForm.controls.user_name.dirty)" class="errorField alert-danger">This field is required!</p>
+                                         <p *ngIf="registerForm.controls.user_name.errors?.pattern && (registerForm.controls.user_name.dirty)" class="errorField alert-danger">Name May Contain Only Alphabets and space</p>
+                                     </div> 
+                                 
+                         </div>
+  
+                     <div class="form-group">
+                         <label for="user_id" class="control-label col-xs-3">Email Address</label>
+                                 <div class="col-xs-9">
+                                         <input type=text formControlName="user_id" name="user_id" placeholder=joshi@gmail.com class="form-control customFormFiled" #present (change)="checkUserPresense(present.value)">
+                                          <p *ngIf="(registerForm.controls.user_id.pristine) " class="errorField alert-danger">Emal Required</p> 
+                                         <p *ngIf="registerForm.controls.user_id.errors?.pattern && (registerForm.controls.user_id.dirty)" class="errorField alert-danger">Email Address Entered is Not Valid </p>
+                                          <!-- <p *ngIf=" (registerForm.controls.user_id.dirty) && registerForm.controls.user_id.errors.email" class="errorField alert-danger">Please Enter A valid Email Address</p> -->
+                                 <!-- -->
+             <!-- <div *ngIf="registerForm.controls.user_id.errors && (registerForm.controls.user_id.dirty || registerForm.controls.user_id.touched)" class="alert alert-danger">
+  <div [hidden]= 'registerForm.controls.user_id.pristine'>Name is required</div>
+  <div [hidden]="!registerForm.controls.user_id.errors.email">Please Enter Valid Email Address.</div>
+  </div> -->
+                                 <!-- -->
+                                     </div>
+                            
+                     </div>
+  
+                     <div class="form-group">
+                         <label for="phone_no" class="control-label col-xs-3">Phone Number</label>
+                                 <div class="col-xs-9">
+                                         <input type=text formControlName="phone_no" placeholder="8377123456" class="form-control customFormFiled">
+                                         <p *ngIf="registerForm.controls.phone_no.errors " class="errorField alert-danger">10 Digits Valid Number Required</p>
+                             
+                                 </div>
+                                     
+                     </div>
+  
+                     <div class="form-group">
+                                 <label for="pass_n" class="control-label col-xs-3">Password</label>
+                                 <div class="col-xs-9">
+                                         <input type="password" formControlName="password" id="pass1" placeholder="Password" class="form-control customFormFiled">
+                                         <p *ngIf="(registerForm.controls.password.pristine ) " class="errorField alert-danger">This field is required!</p>
+                                         <p *ngIf="registerForm.controls.password.errors?.pattern && (registerForm.controls.password.dirty) " class="errorField alert-danger">Must Contain 6-16 Charactors , Atleast One Lower Case Charactor, Upper Case Charactor , Number and special charactor</p>
+                                     </div>
+                     </div>
+ 
+                     
+ 
+ 
+                     <div class="form-group">
+                                 <label for="cnf_pass_n" class="control-label col-xs-3">Confirm Password</label>
+                                 <div class="col-xs-9"><input type=password placeholder="Confirm Password" class="form-control customFormFiled" id="pass2"></div>
+                     </div>
+  
+                 
+                     <div *ngIf="registerForm.controls.user_name.errors || registerForm.controls.password.errors || registerForm.controls.phone_no.errors || registerForm.controls.user_id.errors; else elseBlock">
+                             <div class="col-xs-12">
+                                         <button class="btn btn-primary center-block customFormFiled" disabled >Register</button>
+                             </div>
+                         </div>
+                 <!-- Now else Part Working Part -->
+                         <ng-template #elseBlock>
+                             <div class="col-xs-12">
+                                         <button type="submit" (click)="submitted=true" class="btn btn-primary center-block customFormFiled" >Register</button>
+                             </div>
+                         </ng-template>
+                     
+ 
+                     <!-- 5465465465465 -->
+                 </form>
+  <h4><div class="text-info text-center" id="response">Enter The Details and Click on Register</div></h4>
+  </div>
+  </div>
+  <div class="col-md-4"></div>
+  
+  </div>
+ </div>

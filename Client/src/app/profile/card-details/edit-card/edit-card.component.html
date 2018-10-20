@@ -1,0 +1,155 @@
+<div class="container">
+  
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="form-horizontal center-block">
+  <h1 class="center-block text-center">Card Details<span> <img src="../../assets/images/card.png" class=" imgCls " ></span></h1>
+  
+  
+  <div class="form-group">
+                         <label for="name" class="control-label col-xs-3">Name</label> 
+                                 <div class="col-xs-9">
+                                      <input id="name" placeholder="Name as on the card" type=text formControlName="name" class="form-control customFormFiled">
+                                         <p *ngIf="registerForm.controls.name.errors && (registerForm.controls.name.dirty)" class="errorField alert-danger">This field is required!</p>
+                                 </div> 
+                                 
+      </div>
+ 
+  
+ 
+  <div class="form-group">
+                         <label for="card_type" class="control-label col-xs-3">Card Type</label> 
+                                 <div class="col-xs-9">
+  
+  <select id ="card_type"class="form-control customFormFiled">
+  <option value="Debit Card">Debit Card</option>
+  <option value="Credit Card">Credit Card</option>
+  </select> 
+  
+                                 </div> 
+                                 
+      </div>
+ 
+ 
+  <div class="form-group">
+                         <label for="card_no" class="control-label col-xs-3">Card Number</label>
+                                 <div class="col-xs-9">
+                                         <input type=number id="card_no" formControlName="card_no" placeholder="Card Number as present on the card" class="form-control customFormFiled">
+                                         <p *ngIf="registerForm.controls.card_no.errors && (registerForm.controls.card_no.dirty)" class="errorField alert-danger">This field is required!</p>
+                                 </div>
+                     </div>
+  
+  
+  <div class="form-group">
+                 <label for="expiry" class="control-label col-xs-3">Valid Through</label>
+                         <div class="col-xs-3">
+  
+  <input type="month" id="expiry" formControlName="expiry" placeholder="Locality (House Number / Flat Number)" class="form-control customFormFiled">
+  
+  <p *ngIf="registerForm.controls.expiry.errors && (registerForm.controls.expiry.dirty) " class="errorField alert-danger">This field is required!</p>
+  
+  </div>
+  </div>
+ 
+ 
+  
+  
+ 
+  
+  <div class="col-xs-9">
+                                         <h3 id ="infoCard" class="alert text-warning center-block customFormField text-center btnCls" ></h3>
+  
+  </div>
+  
+  
+  <div *ngIf="registerForm.controls.name.errors || registerForm.controls.card_no.errors || registerForm.controls.expiry.errors; else elseBlock">
+                             <div class="col-xs-12">
+                                         <button class="btn btn-primary center-block customFormFiled btnCls" disabled >Save Card</button>
+  
+  </div>
+                         </div>
+                 <!-- Now else Part Working Part -->
+                         <ng-template #elseBlock>
+                             <div class="col-xs-12">
+  <button type="submit" (click)="submitted=true" class="btn btn-primary btnCls center-block customFormFiled">Save Card</button>
+  
+                             </div>
+                         </ng-template>
+                     
+  </form>
+  
+ <br/>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- -->
+ <!-- -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <div class="form-group">
+                         <label for="street" class="control-label col-xs-3">Street</label>
+                                 <div class="col-xs-9">
+                                          <textarea rows="3" id="street" formControlName="street" placeholder="Area and street Detailed" class="form-control customFormFiled"></textarea> 
+                                         <p *ngIf="registerForm.controls.street.errors && (registerForm.controls.street.dirty)" class="errorField alert-danger">Valid Email is required!</p>
+                                 </div>
+                            
+  </div> 
+  
+ 
+  
+  
+  <div class="form-group">
+                 <label for="city" class="control-label col-xs-3">City</label>
+                         <div class="col-xs-9">
+                                 <input type="text" id="city" formControlName="city" placeholder="Enter City Name" class="form-control customFormFiled">
+                                 <p *ngIf="registerForm.controls.city.errors && (registerForm.controls.city.dirty) " class="errorField alert-danger">This field is required!</p>
+                         </div>
+  </div>
+ 
+  
+  
+  <div class="form-group">
+                 <label for="state" class="control-label col-xs-3">State</label>
+                         <div class="col-xs-9">
+                                 <input type="text" id="state" formControlName="state" placeholder="State Delivery Valid only In India" class="form-control customFormFiled">
+                                 <p *ngIf="registerForm.controls.state.errors && (registerForm.controls.state.dirty) " class="errorField alert-danger">This field is required!</p>
+                         </div>
+  </div>
+ 
+ 
+  
+  <div class="form-group">
+                 <label for="landmark" class="control-label col-xs-3">LandMark</label>
+                         <div class="col-xs-9">
+                                 <input type="text" id="landmark" formControlName="landmark" placeholder="Any nearby location Preferably known or famous locally" class="form-control customFormFiled">
+                                 <p *ngIf="registerForm.controls.landmark.errors && (registerForm.controls.landmark.dirty) " class="errorField alert-danger">This field is required!</p>
+                         </div>
+  </div>
+ 
+ 
+ 
+ 
+ 
+ 
+  <div class="form-group">
+                 <label for="alterPhone" class="control-label col-xs-3">Alternate Number</label>
+                         <div class="col-xs-9">
+                                 <input type="number" id="alterPhone" formControlName="alterPhone" placeholder="Alternate Mobile Number In case We cant Reach To your primary number" class="form-control customFormFiled">
+                                 <p *ngIf="registerForm.controls.alterPhone.errors && (registerForm.controls.alterPhone.dirty) " class="errorField alert-danger">This field is required!</p>
+                         </div>
+  </div> -->
+ 
+ 

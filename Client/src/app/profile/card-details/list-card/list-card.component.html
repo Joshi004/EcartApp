@@ -1,0 +1,38 @@
+<h1 class="container-fluid row alert " style="margin:20px">Your Saved Cards <span> <img src="../../assets/images/card.png" class=" imgCls " ></span></h1>
+<hr>
+ 
+ 
+ <div *ngFor="let card of cardList; let i = index" >
+ 
+ <div class="row">
+
+ <div class="defaults">
+ 
+ 
+
+ <div class="col-xs-5"> 
+ <h3 class=" alert-warning strong">{{card.name}} </h3>
+ <h4 class="alert-inf" >Card Type: {{card.card_type}}</h4> 
+ <h4 class="alert-inf" >Card Number: {{card.card_no}}</h4>
+ <h4 class="alert-inf" >Valid Upto : {{card.expiry}}</h4>
+ <hr>
+ <hr>
+ </div>
+ <div col-xs-1>
+ <br>
+ <div><button (click)="send(card.card_id)" name="selection" class="btn btnCls btn-primary">Modify This Card</button>
+ <br>
+ <button (click)="removeCard(card.card_id)" name="selection" class="btn btnCls btn-danger">Remove This Card</button>
+ <br>
+ <div *ngIf="orderingNow == 1">
+ <label class="container">Use Card
+ <input type="radio" (click)="forwardToOrders(card.card_no,card.card_type)" name="cardSelect">
+ <span class="checkmark"></span> 
+ </label>
+ </div>
+ <br><br><br>
+ </div>
+ </div>
+ </div> 
+ 
+ </div>

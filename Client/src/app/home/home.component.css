@@ -1,0 +1,21 @@
+.prdTag{
+    height:30px;
+    width:100%;
+    /* //max-width:350px; */
+    /* border: 2px solid silver; */
+    margin-bottom:50px;
+   
+   }
+   
+   .inDiv{
+   height:300px;
+    max-width:400px;
+    /* border: 2px solid silver; */
+   }
+   .prdImg{
+    height:350px;
+    width:100%;
+    /* border: 2px solid silver; */
+    
+   
+   }
