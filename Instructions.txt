@@ -1,0 +1,36 @@
+HI
+following are the steps to run the project
+
+1 . Download/Clone the file 
+
+2 . There is a file for mongo DB commands to enter basic product details in database  copy the content of the file and paste in mongo DB console
+
+Make sure you add all the content in database named as "mycart"
+
+Now database is ready to be used
+
+3. In project folder there is a sub-folder named server that is express code for server side
+
+We have to open that using command prompt console using command
+# Node app.js
+
+Above command will throw  error because node modules are not present in that folder
+Therefore first install node modules in the server project folder using following commands
+
+# npm install
+
+Now after making sure that mongo DB and node servers are working properly we need to open the project in angular
+
+Follow the steps to run angular project of angular (client end )
+
+
+
+
+4 In the project folder open the sub-folder named client  using visual studio code and run following commands
+
+AFTER GETTING IN THE  CLIENT DIRECTORY
+
+# npm  install (to install npm modules )
+# ng serve --open (To start the Project )
+
+It it doesn't open automatically go to Google Chrome and type following address
